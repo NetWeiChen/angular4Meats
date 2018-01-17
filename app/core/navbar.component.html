@@ -1,0 +1,34 @@
+
+
+<div *ngIf="nav.visible" class='sideBar floatLeft fixed' [@sideMenuAnime]='openClose'>
+  
+  <!--ul class="nav navbar-nav"-->
+  <ul class="sidebar-nav">
+    <li ><a [routerLink]="['/']">Home</a></li>
+    <li> <a [routerLink]="['/contact']">Contact</a></li>
+    <li ><a [routerLink]="['/successor']">Successor</a></li>
+   
+   
+  </ul>
+</div>
+<!-- <nav *ngIf="nav.visible" class ='mainContainer ' [@mainContainerAnime]='openClose' >    -->
+  <div *ngIf="nav.visible" class="nav_menu" [@mainContainerAnime]='openClose'>
+    <div>
+      <a class="navbar-brand" (click)='hideAndShow()'>Navigation</a>
+    </div>
+    <div class="floatRight">
+      <div class="dropdown">
+        <button class="dropbtn">{{currentNavUserFirstName?currentNavUserFirstName.firstName:null}}
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a [routerLink]="['/login']">Logout</a>
+          <a [routerLink]="['/contact']">Contact</a>
+          <a href="#"> Link 2</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- </nav> -->

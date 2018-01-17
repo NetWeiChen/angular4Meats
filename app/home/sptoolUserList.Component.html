@@ -1,0 +1,11 @@
+<select (change)="onSelect($event.target.value)" [(ngModel)]="selectedUser.id">
+    <option value="0">--Select--</option>
+    <option *ngFor="let user of sptoolUsers" value={{user.id}}>
+        {{user.name}}
+    </option>
+</select>
+<br/>
+Selected user ID: {{selectedUser.id}} && Name: {{selectedUser.name}}
+<h2>Child</h2>
+Say something from Parent: {{parentMessage}}
+<button (click)="sendMessageToParent()" class ="button">Send Message</button>

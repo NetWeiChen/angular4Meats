@@ -1,0 +1,31 @@
+<form >
+    <div [class.flexibleContainer]="(message == undefined) ||(message && message.textme=='open')" [class.flexibleHomeContainer]=" (message && message.textme=='close')" >
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input required ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control" minlength="3" maxlength="20">
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName.errors.required">FirstName is requried</div>
+                <div *ngIf="firstName.errors.minlength">First name should be minimum to {{firstName.errors.minlength.requiredLength}}</div>
+            </div>
+            </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input class="form-control" ngModel name="lastName" #lastName="ngModel" id="lastName" type="text" >
+        </div>
+        <div class="form-group">
+            <label for="employeeNumber">Employee Number</label>
+            <input id="employeeNumber" type="text" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <h1>parent</h1>
+           
+            childMessage:{{childMessage}}
+            <br>
+            <div class="child-group">
+                <sptool-user-list [parentMessage]="parentMessage" (messageEvent)="receiveMessageFromChild($event)" ></sptool-user-list>
+            </div>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+﻿
+
+<!--div class="homeContainer floatLeft" -->
+<div  [class.flexibleContainer]="(message == undefined) ||(message && message.textme=='open')" [class.flexibleHomeContainer]=" (message && message.textme=='close')">
+  <!--div {{message?(message.textme=='open'? class='flexibleContainer':class='flexibleHomeContainer'):class='flexibleHomeContainer'}}-->   
+       
+        <!--div [style]="getStyle()" -->   
+                <!-- <div class="left-panel" >
+                    <ul>
+                        <li>Icon <span class="collapse whatever">Home</span></li>
+                        <li>Icon <span class="collapse whatever"> <a [routerLink]="['/contact']">Contact</a>  </span>  </li>
+                        <li>Icon <span class="collapse whatever"> <a [routerLink]="['/login']">Logout</a> </span>  </li>
+                    </ul>
+                </div> -->
+                <div class="main">
+                    <!-- <button data-toggle="collapse" data-target=".whatever">Hamburger icon</button> -->
+                    <div class="container-fluid">
+                            <!--div class = "row"-->
+                                <div class="col-lg-12">
+                                    <!-- <p >{{message?message.textme:''}}</p>                                    -->
+                                        <h1>Hi {{currentUser.firstName}}!</h1>
+                                       
+                                        <p>You're logged in with Angular 2!!</p>
+                                        <h3 highlight>All registered users:</h3>                                    
+                                        <ul>
+                                            <li *ngFor="let user of users">
+                                              {{user.username}} ({{user.firstName}} {{user.lastName}})
+                                                - <a (click)="deleteUser(user.id)">Delete</a>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li *ngFor="let sptooluser of sptoolusers">
+                                            {{sptooluser.usr_nm}}  {{sptooluser.custm_usrid}} 
+                                                - <a (click)="deleteUser(sptooluser.id)">Delete</a>
+                                            </li>
+                                        </ul> 
+                                </div>
+                            <!--/div-->
+                    </div>
+                
+        </div>
+</div>
+

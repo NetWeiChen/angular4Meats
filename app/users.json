@@ -1,0 +1,12 @@
+[
+    {
+        "UserID":1,
+        "EmployeeNumber": "123456789",
+        "EmployeeName": "raymond"
+    },
+    {
+        "UserID":2,
+        "EmployeeNumber": "123456788",
+        "EmployeeName": "ray"
+    }
+]
